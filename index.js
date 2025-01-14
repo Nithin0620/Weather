@@ -127,7 +127,8 @@ function getLocation() {
         navigator.geolocation.getCurrentPosition(showPosition);
     }
     else {
-        //HW - show an alert for no gelolocation support available
+        alert("Geolocation is not supported by this browser.");
+        // HW - show an alert for no gelolocation support available
     }
 }
 
@@ -140,7 +141,6 @@ function showPosition(position) {
 
     sessionStorage.setItem("user-coordinates", JSON.stringify(userCoordinates));
     fetchUserWeatherInfo(userCoordinates);
-
 }
 
 const grantAccessButton = document.querySelector("[data-grantAccess]");
